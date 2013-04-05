@@ -1,4 +1,16 @@
-ncraft-core
-===========
+ncraft
+======
 
-Nazuraki's Minecraft mod pack core mod
+Nazuraki's Minecraft mod pack
+
+
+core
+----
+
+
+api
+---
+
+
+tech
+----
