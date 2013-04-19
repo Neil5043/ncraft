@@ -1,7 +1,9 @@
 package mods.nazu.ncraft;
 
+import mods.nazu.ncraft.world.ItemPlaceholder;
 import mods.nazu.ncraft.world.PlaceholderOre;
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -25,7 +27,8 @@ public class NCraftCore
 	
 	@SidedProxy(clientSide="mods.nazu.ncraft.client.ClientProxy", serverSide="mods.nazu.ncraft.CommonProxy")
 	public static CommonProxy proxy;
-	
+
+    public static final Item itemPlaceholder = new ItemPlaceholder(5000);
 	public static final Block placeholderOre = new PlaceholderOre(501);
 	
 	@PreInit
@@ -37,6 +40,8 @@ public class NCraftCore
 	@Init
 	public void load(FMLInitializationEvent event)
 	{
+        LanguageRegistry.addName(itemPlaceholder, "Placeholder");
+
 		LanguageRegistry.addName(placeholderOre, "Placeholder Ore");
 		MinecraftForge.setBlockHarvestLevel(placeholderOre, "pickaxe", 3);
 		GameRegistry.registerBlock(placeholderOre, "placeholderOre");

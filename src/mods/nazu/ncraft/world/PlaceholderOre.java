@@ -8,6 +8,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 
+import java.util.Random;
+
 public class PlaceholderOre extends BlockOre
 {
 	private Icon texture;
@@ -23,17 +25,22 @@ public class PlaceholderOre extends BlockOre
 		
 	}
 
-	@Override
+    @Override
+    public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return 5000;
+    }
+
+    @Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister)
 	{
-		texture = iconRegister.registerIcon("ncraft:placeholderOre");
+		texture = iconRegister.registerIcon("ncraft:orePlaceholder");
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public Icon getBlockTexture(IBlockAccess par1iBlockAccess, int par2,
-			int par3, int par4, int par5)
+	public Icon getBlockTexture(IBlockAccess par1iBlockAccess, int x, int y, int z, int side)
 	{
 		return texture;
 	}
