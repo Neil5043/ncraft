@@ -1,10 +1,5 @@
 package mods.nazu.ncraft;
 
-import mods.nazu.ncraft.world.ItemPlaceholder;
-import mods.nazu.ncraft.world.PlaceholderOre;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -15,41 +10,42 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
+import mods.nazu.ncraft.world.PlaceholderOre;
+import net.minecraft.block.Block;
 
+/**
+ * @author nazuraki
+ * @since 2013.04.19
+ */
+@SuppressWarnings("UnusedDeclaration")
 @Mod(modid="ncraft", name="ncraft", version="0.0.0")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class NCraftCore
 {
-	@Instance
-	public static NCraftCore instance;
-	
-	@SidedProxy(clientSide="mods.nazu.ncraft.client.ClientProxy", serverSide="mods.nazu.ncraft.CommonProxy")
-	public static CommonProxy proxy;
+    @Instance
+    public static NCraftCore instance;
 
-    public static final Item itemPlaceholder = new ItemPlaceholder(5000);
-	public static final Block placeholderOre = new PlaceholderOre(501);
-	
-	@PreInit
-	public void preInit(FMLPreInitializationEvent event)
-	{
-		
-	}
-	
-	@Init
-	public void load(FMLInitializationEvent event)
-	{
-        LanguageRegistry.addName(itemPlaceholder, "Placeholder");
+    @SidedProxy(clientSide="mods.nazu.ncraft.client.ClientProxy", serverSide="mods.nazu.ncraft.CommonProxy")
+    public static CommonProxy proxy;
 
-		LanguageRegistry.addName(placeholderOre, "Placeholder Ore");
-		MinecraftForge.setBlockHarvestLevel(placeholderOre, "pickaxe", 3);
-		GameRegistry.registerBlock(placeholderOre, "placeholderOre");
-	}
-	
-	@PostInit
-	public void postInit(FMLPostInitializationEvent event)
-	{
-		
-	}
+    public static final Block placeholderOre = new PlaceholderOre(501);
+
+    @PreInit
+    public void preInit(FMLPreInitializationEvent event)
+    {
+        Config config = new Config(event);
+    }
+
+    @Init
+    public void load(FMLInitializationEvent event)
+    {
+        Config.registerNames();
+        Config.registerBlocks();
+    }
+
+    @PostInit
+    public void postInit(FMLPostInitializationEvent event)
+    {
+
+    }
 }

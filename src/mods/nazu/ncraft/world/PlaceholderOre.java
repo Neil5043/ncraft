@@ -2,6 +2,7 @@ package mods.nazu.ncraft.world;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import mods.nazu.ncraft.Config;
 import net.minecraft.block.BlockOre;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -10,6 +11,10 @@ import net.minecraft.world.IBlockAccess;
 
 import java.util.Random;
 
+/**
+ * @author nazuraki
+ * @since 2013.04.19
+ */
 public class PlaceholderOre extends BlockOre
 {
 	private Icon texture;
@@ -20,15 +25,14 @@ public class PlaceholderOre extends BlockOre
 		
 		setHardness(1.0f);
 		setStepSound(soundStoneFootstep);
-		setUnlocalizedName("placeholderOre");
+		setUnlocalizedName(Blocks.Placeholder.getUnlocalizedName());
 		setCreativeTab(CreativeTabs.tabBlock);
-		
 	}
 
     @Override
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return 5000;
+        return Config.getId(Items.Placeholder);
     }
 
     @Override
