@@ -17,8 +17,6 @@ import java.util.Random;
  */
 public class PlaceholderOre extends BlockOre
 {
-	private Icon texture;
-
 	public PlaceholderOre(int id)
 	{
 		super(id);
@@ -39,13 +37,13 @@ public class PlaceholderOre extends BlockOre
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister)
 	{
-		texture = iconRegister.registerIcon("ncraft:orePlaceholder");
+		blockIcon = iconRegister.registerIcon("ncraft:orePlaceholder");
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public Icon getBlockTexture(IBlockAccess par1iBlockAccess, int x, int y, int z, int side)
 	{
-		return texture;
+		return blockIcon;
 	}
 }

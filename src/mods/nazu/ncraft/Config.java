@@ -57,6 +57,12 @@ public class Config
         return (null == i ? -1 : i.itemID);
     }
 
+    public static int getId(Blocks block)
+    {
+        Block b = BLOCKS.get(block);
+        return (null == b ? -1 : b.blockID);
+    }
+
     public static void registerNames()
     {
         for (Map.Entry<Items, Item> entry : ITEMS.entrySet())

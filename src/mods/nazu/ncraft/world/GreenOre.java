@@ -14,8 +14,6 @@ import net.minecraft.world.IBlockAccess;
  */
 public class GreenOre extends BlockOre
 {
-    private Icon texture;
-
     public GreenOre(int id)
     {
         super(id);
@@ -30,13 +28,13 @@ public class GreenOre extends BlockOre
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister)
     {
-        texture = iconRegister.registerIcon("ncraft:oreGreen");
+        blockIcon = iconRegister.registerIcon("ncraft:oreGreen");
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public Icon getBlockTexture(IBlockAccess par1iBlockAccess, int x, int y, int z, int side)
     {
-        return texture;
+        return blockIcon;
     }
 }
