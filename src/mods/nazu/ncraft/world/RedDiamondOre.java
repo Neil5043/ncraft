@@ -4,7 +4,6 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockOre;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 
@@ -21,7 +20,7 @@ public class RedDiamondOre extends BlockOre
         setHardness(1.0f);
         setStepSound(soundStoneFootstep);
         setUnlocalizedName(Ores.RedDiamond.getUnlocalizedName());
-        setCreativeTab(CreativeTabs.tabBlock);
+        setCreativeTab(TabWorld.INSTANCE);
     }
 
     @Override

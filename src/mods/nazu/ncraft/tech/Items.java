@@ -1,6 +1,6 @@
-package mods.nazu.ncraft.world;
+package mods.nazu.ncraft.tech;
 
-import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -9,39 +9,41 @@ import java.lang.reflect.InvocationTargetException;
  * @author nazuraki
  * @since 2013.04.19
  */
-public enum Blocks
+public enum Items
 {
+    // parts
+    MachinePart("machinePart", 540, MachinePart.class, "Machine Part"),
+
+    // machine types
+    MachineTool("machineTool", 541, MachineTool.class, "Machine Tool"),
+
+    // engine types
+    MachineEngine("machineEngine", 541, MachineEngine.class, "Machine Engine"),
     ;
 
-    private final String unlocalizedName;
+    private final String name;
     private final int defaultId;
-    private final Class<? extends Block> klass;
+    private final Class<? extends Item> klass;
     private final String displayName;
-    private final String harvestTool;
-    private final int harvestLevel;
 
-    private Blocks(String unlocalizedName, int defaultId, Class<? extends Block> klass, String displayName, String harvestTool, int harvestLevel)
+    private Items(String name, int defaultId, Class<? extends Item> klass, String displayName)
     {
-        this.unlocalizedName = unlocalizedName;
+        this.name = name;
         this.defaultId = defaultId;
         this.klass = klass;
         this.displayName = displayName;
-        this.harvestTool = harvestTool;
-        this.harvestLevel = harvestLevel;
     }
 
-    public String getUnlocalizedName() { return unlocalizedName; }
+    public String getName() { return name; }
     public String getDisplayName() { return displayName; }
     public int getDefaultId() { return defaultId; }
-    public String getHarvestTool() { return harvestTool; }
-    public int getHarvestLevel() { return harvestLevel; }
 
-    public Block create(int id)
+    public Item create(int id)
     {
         try
         {
             Constructor ctor = klass.getConstructor(int.class);
-            return (Block) ctor.newInstance(id);
+            return (Item) ctor.newInstance(id);
         }
         catch (NoSuchMethodException e)
         {

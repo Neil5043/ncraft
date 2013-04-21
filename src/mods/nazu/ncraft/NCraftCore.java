@@ -33,15 +33,18 @@ public class NCraftCore
     public void preInit(FMLPreInitializationEvent event)
     {
         Config config = new Config(event);
+
+        Config.registerNames();
+        Config.registerBlocks();
+
+        proxy.addNames();
+
+        GameRegistry.registerWorldGenerator(new WorldGenerator());
     }
 
     @Init
     public void load(FMLInitializationEvent event)
     {
-        Config.registerNames();
-        Config.registerBlocks();
-
-        GameRegistry.registerWorldGenerator(new WorldGenerator());
     }
 
     @PostInit

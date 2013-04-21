@@ -1,9 +1,6 @@
-package mods.nazu.ncraft.world;
+package mods.nazu.ncraft.tech;
 
-import mods.nazu.ncraft.config.Config;
-import mods.nazu.ncraft.config.OreConfig;
 import net.minecraft.block.Block;
-import net.minecraftforge.common.Configuration;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -12,12 +9,9 @@ import java.lang.reflect.InvocationTargetException;
  * @author nazuraki
  * @since 2013.04.19
  */
-public enum Ores
+public enum Blocks
 {
-    // todo reduce these to a single id
-    Placeholder("orePlaceholder", 501, PlaceholderOre.class, "Placeholder Ore", "pickaxe", 3, 20, 45, 10, 8),
-    Green("oreGreen", 502, GreenOre.class, "Green Ore", "pickaxe", 3, 20, 45, 10, 6),
-    RedDiamond("oreRedDiamond", 503, RedDiamondOre.class, "Red Diamond Ore", "pickaxe", 5, 5, 10, 1, 5),
+    EngineeringTable("engineeringTable", 520, mods.nazu.ncraft.tech.EngineeringTable.class, "Engineering Table", "axe", 1)
     ;
 
     private final String unlocalizedName;
@@ -26,13 +20,8 @@ public enum Ores
     private final String displayName;
     private final String harvestTool;
     private final int harvestLevel;
-    private final int height;
-    private final int range;
-    private final int density;
-    private final int veinSize;
 
-    private Ores(String unlocalizedName, int defaultId, Class<? extends Block> klass, String displayName,
-                 String harvestTool, int harvestLevel, int height, int range, int density, int veinSize)
+    private Blocks(String unlocalizedName, int defaultId, Class<? extends Block> klass, String displayName, String harvestTool, int harvestLevel)
     {
         this.unlocalizedName = unlocalizedName;
         this.defaultId = defaultId;
@@ -40,10 +29,6 @@ public enum Ores
         this.displayName = displayName;
         this.harvestTool = harvestTool;
         this.harvestLevel = harvestLevel;
-        this.height = height;
-        this.range = range;
-        this.density = density;
-        this.veinSize = veinSize;
     }
 
     public String getUnlocalizedName() { return unlocalizedName; }
@@ -76,10 +61,5 @@ public enum Ores
             e.printStackTrace();
         }
         return null;
-    }
-
-    public OreConfig createConfig(Configuration config)
-    {
-        return new OreConfig(unlocalizedName, Config.getId(this), config, height, range, density, veinSize);
     }
 }

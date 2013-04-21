@@ -5,7 +5,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 import mods.nazu.ncraft.config.Config;
 import net.minecraft.block.BlockOre;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 
@@ -24,7 +23,7 @@ public class PlaceholderOre extends BlockOre
 		setHardness(1.0f);
 		setStepSound(soundStoneFootstep);
 		setUnlocalizedName(Ores.Placeholder.getUnlocalizedName());
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(TabWorld.INSTANCE);
 	}
 
     @Override

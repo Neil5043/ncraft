@@ -18,8 +18,8 @@ public class ItemPlaceholder extends Item
         super(id);
 
         maxStackSize = 64;
-        setCreativeTab(CreativeTabs.tabMaterials);
-        setUnlocalizedName("itemPlaceholder");
+        setCreativeTab(TabWorld.INSTANCE);
+        setUnlocalizedName(Items.Placeholder.getUnlocalizedName());
     }
 
     @Override
