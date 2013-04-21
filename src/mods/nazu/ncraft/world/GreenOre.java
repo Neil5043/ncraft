@@ -20,7 +20,7 @@ public class GreenOre extends BlockOre
 
         setHardness(1.0f);
         setStepSound(soundStoneFootstep);
-        setUnlocalizedName(Blocks.Green.getUnlocalizedName());
+        setUnlocalizedName(Ores.Green.getUnlocalizedName());
         setCreativeTab(CreativeTabs.tabBlock);
     }
 

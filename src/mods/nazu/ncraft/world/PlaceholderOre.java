@@ -2,7 +2,7 @@ package mods.nazu.ncraft.world;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import mods.nazu.ncraft.Config;
+import mods.nazu.ncraft.config.Config;
 import net.minecraft.block.BlockOre;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -23,7 +23,7 @@ public class PlaceholderOre extends BlockOre
 		
 		setHardness(1.0f);
 		setStepSound(soundStoneFootstep);
-		setUnlocalizedName(Blocks.Placeholder.getUnlocalizedName());
+		setUnlocalizedName(Ores.Placeholder.getUnlocalizedName());
 		setCreativeTab(CreativeTabs.tabBlock);
 	}
 

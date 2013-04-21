@@ -20,7 +20,7 @@ public class RedDiamondOre extends BlockOre
 
         setHardness(1.0f);
         setStepSound(soundStoneFootstep);
-        setUnlocalizedName(Blocks.RedDiamond.getUnlocalizedName());
+        setUnlocalizedName(Ores.RedDiamond.getUnlocalizedName());
         setCreativeTab(CreativeTabs.tabBlock);
     }
 

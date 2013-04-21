@@ -1,10 +1,10 @@
 package mods.nazu.ncraft.world;
 
 import cpw.mods.fml.common.IWorldGenerator;
-import mods.nazu.ncraft.Config;
+import mods.nazu.ncraft.config.Config;
+import mods.nazu.ncraft.config.OreConfig;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.feature.WorldGenMinable;
 
 import java.util.Random;
 
@@ -17,15 +17,11 @@ public class WorldGenerator implements IWorldGenerator
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)
     {
-        if (world.provider.dimensionId != -1) // nether
+        if (!world.provider.isHellWorld)
         {
-            for (int k = 0; k < 10; k++)
+            for (OreConfig ore : Config.getOres())
             {
-                int x = chunkX + random.nextInt(16);
-                int y = random.nextInt(64);
-                int z = chunkZ + random.nextInt(16);
-
-                (new WorldGenMinable(Config.getId(Blocks.Green), 13)).generate(world, random, x, y, z);
+                ore.generate(chunkX, chunkZ, random, world);
             }
         }
     }

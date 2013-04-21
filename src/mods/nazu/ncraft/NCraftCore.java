@@ -11,9 +11,8 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
-import mods.nazu.ncraft.world.PlaceholderOre;
+import mods.nazu.ncraft.config.Config;
 import mods.nazu.ncraft.world.WorldGenerator;
-import net.minecraft.block.Block;
 
 /**
  * @author nazuraki
@@ -29,8 +28,6 @@ public class NCraftCore
 
     @SidedProxy(clientSide="mods.nazu.ncraft.client.ClientProxy", serverSide="mods.nazu.ncraft.CommonProxy")
     public static CommonProxy proxy;
-
-    public static final Block placeholderOre = new PlaceholderOre(501);
 
     @PreInit
     public void preInit(FMLPreInitializationEvent event)
