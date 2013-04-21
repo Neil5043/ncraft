@@ -3,6 +3,7 @@ ncraft
 
 Nazuraki's Minecraft mod pack
 
+![Screenshot](https://raw.github.com/kurakin/ncraft/master/Screenshot.png)
 
 core
 ----
