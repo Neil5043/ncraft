@@ -27,7 +27,7 @@ public class EngineeringTableGui extends GuiContainer
     protected void drawGuiContainerBackgroundLayer(float f, int i, int j)
     {
         GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-        mc.renderEngine.bindTexture("/gui/engineeringTable.png");
+        mc.renderEngine.bindTexture("/mods/ncraft/gui/engineeringTable.png");
         int x = (width - xSize) / 2;
         int y = (height - ySize) / 2;
         drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
