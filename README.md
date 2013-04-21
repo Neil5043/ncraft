@@ -26,6 +26,10 @@ api
   - liquid
   - item
 
+world
+-----
+- geode (multiblock) ore? 1x1, 2^3, 3^3?
+
 tech
 ----
 

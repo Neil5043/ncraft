@@ -10,8 +10,10 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import mods.nazu.ncraft.config.Config;
+import mods.nazu.ncraft.tech.GuiHandler;
 import mods.nazu.ncraft.world.WorldGenerator;
 
 /**
@@ -40,6 +42,8 @@ public class NCraftCore
         proxy.addNames();
 
         GameRegistry.registerWorldGenerator(new WorldGenerator());
+
+        NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
     }
 
     @Init
