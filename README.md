@@ -47,6 +47,23 @@ machine being crafted.
 Building machines just requires crafting whatever components you like, and combining them in the engineering table.
 There are a number of components available. Some components use a connection, and thus must be on one of the faces.
 
+Listed below are all of the tool and engine components, but to support those there are many other components.
+
+Some require internal storage:
+
+- **Capacitor** - stores energy
+- **Liquid Tank** - stores, ahem, liquids
+- **Hopper** - stores items
+- **Compression Cylinder** - stores gases like steam
+
+You may also want to fill/empty that internal storage:
+
+- **Power Intake/Outlet** - used to add/remove stored energy
+- **Liquid Intake/Outlet** - used to add/remove liquids
+- **Valve** - combination liquid intake/outlet
+- **Item Input/Output** - used to add/remove items
+- **Hatch** - combination item input/output
+
 #### Tools
 
 These components perform some sort of processing. You can have mulitple of these in a machine, but you'll need a
