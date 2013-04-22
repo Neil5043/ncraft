@@ -85,3 +85,38 @@ cobble, stone, and obsidian.
 
 Produces steam. Requires a liquid tank and a compression cylinder.
 
+#### Engines
+
+These components produce energy. Multiple of the same component will increase efficiency, but multiple different
+engines will reduce efficiency.
+
+##### Hydro
+
+Uses current in adjacent blocks to produce power. Only the block adjacent to the face this component is on is used
+though.
+
+##### Solar
+
+Collects sunlight to produce power. Does not work on the bottom face. The top is best, but the sides will operate at
+half efficiency.
+
+##### Thermal
+
+Uses heat produced by adjacent lava blocks to generate power. Must be facing the lava block to work. Also requires a
+liquid tank with water.
+
+##### Wind
+
+Harnesses the power of the wind. Only works on the front/back/left/right faces. Up to two of these can be combined in
+a machine, but must be on opposite faces. Only effective if the block is placed so these face east/west. (Clouds move
+towards west.)
+
+##### Solid/Liquid Fueled
+
+Burn solid or liquid fuels to generate power. Require a liquid tank or a hopper.
+
+##### Steam
+
+Uses steam to produce energy. Requires a compression cylinder. There is also an industrial version, which is more
+efficient.
+
