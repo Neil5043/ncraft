@@ -64,6 +64,15 @@ You may also want to fill/empty that internal storage:
 - **Item Input/Output** - used to add/remove items
 - **Hatch** - combination item input/output
 
+In addition, there are components which when placed adjacent to a component they modify, will increase its
+efficiency:
+
+- **Vent** - works with hammer, drill and saw
+- **Heating Element** - works with oven, cast, and boiler
+- **Furnace** - works with oven and cast
+- **Generator/Industrial Generator** - works with solid/liquid fueled and solar engines.
+- **Turbine/Industrial Turbine** - works with hydro, thermal, wind, and steam engines.
+
 #### Tools
 
 These components perform some sort of processing. You can have mulitple of these in a machine, but you'll need a
