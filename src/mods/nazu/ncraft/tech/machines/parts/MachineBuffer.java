@@ -1,54 +1,56 @@
-package mods.nazu.ncraft.tech;
+package mods.nazu.ncraft.tech.machines.parts;
+
+import java.util.List;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import mods.nazu.ncraft.tech.Items;
+import mods.nazu.ncraft.tech.TabTech;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 
-import java.util.List;
-
 /**
  * @author nazuraki
  * @since 2013.04.21
  */
-public class MachineEngine extends Item
+public class MachineBuffer extends Item
 {
     private final Icon[] icons;
 
-    public MachineEngine(int id)
+    public MachineBuffer(int id)
     {
         super(id);
 
         setCreativeTab(TabTech.INSTANCE);
         setMaxDamage(0);
         setHasSubtypes(true);
-        setUnlocalizedName(Items.MachineEngine.getName());
+        setUnlocalizedName(Items.MachineBuffer.getName());
 
-        icons = new Icon[MachineEngines.values().length];
+        icons = new Icon[MachineBuffers.values().length];
     }
 
     @Override
     public String getUnlocalizedName(ItemStack stack)
     {
-        return getUnlocalizedName() + "." + MachineEngines.get(stack.getItemDamage()).getName();
+        return getUnlocalizedName() + "." + MachineBuffers.get(stack.getItemDamage()).getName();
     }
 
     @Override
     public String getItemDisplayName(ItemStack stack)
     {
-        return MachineEngines.get(stack.getItemDamage()).getDisplayName();
+        return MachineBuffers.get(stack.getItemDamage()).getDisplayName();
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister)
     {
-        for (MachineEngines engine : MachineEngines.values())
+        for (MachineBuffers buffer : MachineBuffers.values())
         {
-            icons[engine.ordinal()] = iconRegister.registerIcon("ncraft:" + Items.MachineEngine.getName() + "." + engine.getName());
+            icons[buffer.ordinal()] = iconRegister.registerIcon("ncraft:" + Items.MachineBuffer.getName() + "." + buffer.getName());
         }
     }
 
@@ -63,9 +65,9 @@ public class MachineEngine extends Item
     @Override
     public void getSubItems(int id, CreativeTabs tab, List list)
     {
-        for (MachineEngines engine : MachineEngines.values())
+        for (MachineBuffers buffer : MachineBuffers.values())
         {
-            list.add(new ItemStack(id, 1, engine.ordinal()));
+            list.add(new ItemStack(id, 1, buffer.ordinal()));
         }
     }
 }

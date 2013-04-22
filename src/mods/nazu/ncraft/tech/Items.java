@@ -5,20 +5,20 @@ import net.minecraft.item.Item;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
+import mods.nazu.ncraft.tech.machines.parts.MachineBuffer;
+import mods.nazu.ncraft.tech.machines.parts.MachineIO;
+
 /**
  * @author nazuraki
  * @since 2013.04.19
  */
 public enum Items
 {
-    // parts
-    MachinePart("machinePart", 540, MachinePart.class, "Machine Part"),
-
-    // machine types
-    MachineTool("machineTool", 541, MachineTool.class, "Machine Tool"),
-
-    // engine types
-    MachineEngine("machineEngine", 541, MachineEngine.class, "Machine Engine"),
+    MachinePart("machinePart", 540, mods.nazu.ncraft.tech.machines.parts.MachinePart.class, "Machine Part"),
+    MachineTool("machineTool", 541, mods.nazu.ncraft.tech.machines.parts.MachineTool.class, "Machine Tool"),
+    MachineEngine("machineEngine", 542, mods.nazu.ncraft.tech.machines.parts.MachineEngine.class, "Machine Engine"),
+    MachineBuffer("machineBuffers", 543, MachineBuffer.class, "Machine Buffer"),
+    MachineIO("machineIO", 544, MachineIO.class, "Machine I/O"),
     ;
 
     private final String name;

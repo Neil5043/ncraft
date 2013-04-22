@@ -31,7 +31,7 @@ Nazuraki's Minecraft mod pack
 
 ### Machines
 
-In order to build any of the machines, you'll first need to build an engineering table.
+In order to build any of the machines, you'll first need to build an Engineering Table.
 
 todo: screenshot
 
@@ -43,6 +43,10 @@ Some of the slots in the crafting grid are colored. The blue one in the center i
 on the left is for the left side of the machine, the orange for the right. The pink corresponds to the top, the purple
 for the bottom. Larger engineering tables will give additional slots, including some colored red for the back of the
 machine being crafted.
+
+Building an Engineering Workbench and placing it next to the Engineering Table will cause it to form a multiblock
+and give you a large crafting area, allowing more advanced machines. Each additional workbench will increase the size,
+up to 3 workbenches, giving a 6x6 crafting area.
 
 Building machines just requires crafting whatever components you like, and combining them in the engineering table.
 There are a number of components available. Some components use a connection, and thus must be on one of the faces.

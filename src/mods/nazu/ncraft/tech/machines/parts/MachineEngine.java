@@ -1,7 +1,9 @@
-package mods.nazu.ncraft.tech;
+package mods.nazu.ncraft.tech.machines.parts;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import mods.nazu.ncraft.tech.Items;
+import mods.nazu.ncraft.tech.TabTech;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -14,41 +16,41 @@ import java.util.List;
  * @author nazuraki
  * @since 2013.04.21
  */
-public class MachineTool extends Item
+public class MachineEngine extends Item
 {
     private final Icon[] icons;
 
-    public MachineTool(int id)
+    public MachineEngine(int id)
     {
         super(id);
 
         setCreativeTab(TabTech.INSTANCE);
         setMaxDamage(0);
         setHasSubtypes(true);
-        setUnlocalizedName(Items.MachineTool.getName());
+        setUnlocalizedName(Items.MachineEngine.getName());
 
-        icons = new Icon[MachineTools.values().length];
+        icons = new Icon[MachineEngines.values().length];
     }
 
     @Override
     public String getUnlocalizedName(ItemStack stack)
     {
-        return getUnlocalizedName() + "." + MachineTools.get(stack.getItemDamage()).getName();
+        return getUnlocalizedName() + "." + MachineEngines.get(stack.getItemDamage()).getName();
     }
 
     @Override
     public String getItemDisplayName(ItemStack stack)
     {
-        return MachineTools.get(stack.getItemDamage()).getDisplayName();
+        return MachineEngines.get(stack.getItemDamage()).getDisplayName();
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister)
     {
-        for (MachineTools tool : MachineTools.values())
+        for (MachineEngines engine : MachineEngines.values())
         {
-            icons[tool.ordinal()] = iconRegister.registerIcon("ncraft:" + Items.MachineTool.getName() + "." + tool.getName());
+            icons[engine.ordinal()] = iconRegister.registerIcon("ncraft:" + Items.MachineEngine.getName() + "." + engine.getName());
         }
     }
 
@@ -63,9 +65,9 @@ public class MachineTool extends Item
     @Override
     public void getSubItems(int id, CreativeTabs tab, List list)
     {
-        for (MachineTools tool : MachineTools.values())
+        for (MachineEngines engine : MachineEngines.values())
         {
-            list.add(new ItemStack(id, 1, tool.ordinal()));
+            list.add(new ItemStack(id, 1, engine.ordinal()));
         }
     }
 }

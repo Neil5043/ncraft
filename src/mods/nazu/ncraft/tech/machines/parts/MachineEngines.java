@@ -1,10 +1,14 @@
-package mods.nazu.ncraft.tech;
+package mods.nazu.ncraft.tech.machines.parts;
+
+import java.util.Set;
+
+import mods.nazu.ncraft.tech.machines.MachineFace;
 
 /**
  * @author nazuraki
  * @since 2013.04.21
  */
-public enum MachineEngines
+public enum MachineEngines implements MachineComponent
 {
     Hydro("hydro", "Hydro Engine"),
     Solar("solar", "Solar Engine"),
@@ -16,16 +20,6 @@ public enum MachineEngines
     IndustrialSteamEngine("industrialSteam", "Industrial Steam Engine"),
     ;
 
-    private static final MachineEngines[] byId;
-    static
-    {
-        byId = new MachineEngines[values().length];
-        for (MachineEngines engine : values())
-        {
-            byId[engine.ordinal()] = engine;
-        }
-    }
-
     private final String name;
     private final String displayName;
 
@@ -35,8 +29,30 @@ public enum MachineEngines
         this.displayName = displayName;
     }
 
-    public String getName() { return name; }
-    public String getDisplayName() { return displayName; }
+    @Override public String getName() { return name; }
+    @Override public String getDisplayName() { return displayName; }
+
+    @Override
+    public boolean acceptsConnection()
+    {
+        return false;
+    }
+
+    @Override
+    public Set<MachineFace> requiresFace()
+    {
+        return null;
+    }
+
+    private static final MachineEngines[] byId;
+    static
+    {
+        byId = new MachineEngines[values().length];
+        for (MachineEngines engine : values())
+        {
+            byId[engine.ordinal()] = engine;
+        }
+    }
 
     public static MachineEngines get(int id)
     {
