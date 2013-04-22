@@ -150,3 +150,12 @@ Burn solid or liquid fuels to generate power. Require a liquid tank or a hopper.
 Uses steam to produce energy. Requires a compression cylinder. There is also an industrial version, which is more
 efficient.
 
+#### Additional Components
+
+- **LED** - adds an LED light to the face of the machine. If adjacent to a power input, it will indicate when the
+machine as power, if adjacent to a tool, it will indicate when the machine is working, if adjacent to an engine it
+will indicate when power is being produced. Supports dual and tri color LEDs. Tri color LEDs use the second color
+to indicate 'ready' state, when it has resources but output is blocked.
+- **Wiring** - used to connect a power input/output to a component that requires power.
+- **Controller** - used to move items from one tool to another.
+

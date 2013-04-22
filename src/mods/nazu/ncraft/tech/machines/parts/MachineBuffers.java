@@ -5,9 +5,8 @@ import java.util.Set;
 import mods.nazu.ncraft.tech.machines.MachineFace;
 
 /**
- * @author wasche
- * @copyright Wil Asche (wil@asche.us)
- * @license CC BY SA 3.0
+ * @author nazuraki
+ * @license CC BY 3.0
  * @since 2013.04.22
  */
 public enum MachineBuffers implements MachineComponent
@@ -33,7 +32,7 @@ public enum MachineBuffers implements MachineComponent
     @Override
     public boolean acceptsConnection()
     {
-        return false;
+        return true;
     }
 
     @Override

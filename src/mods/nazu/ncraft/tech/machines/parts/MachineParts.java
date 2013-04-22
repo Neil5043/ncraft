@@ -17,6 +17,9 @@ public enum MachineParts implements MachineComponent
     IndustrialGenerator("industrialGenerator", "Industrial Generator"),
     Turbine("turbine", "Turbine"),
     IndustrialTurbine("industrialTurbine", "Industrial Turbine"),
+    LED("led", "LED"),
+    Wiring("wiring", "Wiring"),
+    Controller("controller", "Controller"),
     ;
 
     private final String name;
