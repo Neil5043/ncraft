@@ -1,5 +1,6 @@
 package mods.nazu.ncraft.tech;
 
+import mods.nazu.ncraft.api.tech.machines.MachineRegistry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -17,7 +18,7 @@ public class EngineeringTableTileEntity extends TileEntity implements IInventory
 
     public EngineeringTableTileEntity()
     {
-        inv = new ItemStack[9];
+        inv = new ItemStack[6 * 6];
     }
 
     @Override
@@ -78,7 +79,7 @@ public class EngineeringTableTileEntity extends TileEntity implements IInventory
     @Override
     public String getInvName()
     {
-        return "ncraft.tech.te.engineeringTable";
+        return "ncraft.engineeringTable";
     }
 
     @Override
@@ -111,9 +112,9 @@ public class EngineeringTableTileEntity extends TileEntity implements IInventory
     }
 
     @Override
-    public boolean isStackValidForSlot(int i, ItemStack itemstack)
+    public boolean isStackValidForSlot(int i, ItemStack stack)
     {
-        return false;
+        return MachineRegistry.contains(stack.itemID, stack.getItemDamage());
     }
 
     @Override

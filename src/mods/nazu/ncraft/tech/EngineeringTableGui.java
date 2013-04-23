@@ -14,6 +14,9 @@ public class EngineeringTableGui extends GuiContainer
     public EngineeringTableGui(InventoryPlayer inventoryPlayer, EngineeringTableTileEntity tileEntity)
     {
         super(new EngineeringTableContainer(inventoryPlayer, tileEntity));
+
+        xSize = 176;
+        ySize = 166;
     }
 
     @Override
