@@ -73,7 +73,9 @@ efficiency:
 
 - **Vent** - works with hammer, drill and saw
 - **Heating Element** - works with oven, cast, and boiler
-- **Furnace** - works with oven and cast
+- **Furnace** -
+![Furnace](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machinePart.furnace.png)
+works with oven and cast
 - **Generator/Industrial Generator** - works with solid/liquid fueled and solar engines.
 - **Turbine/Industrial Turbine** - works with hydro, thermal, wind, and steam engines.
 
@@ -82,45 +84,28 @@ efficiency:
 These components perform some sort of processing. You can have mulitple of these in a machine, but you'll need a
 controller component for them to interact.
 
-##### Hammer
-
+- **Hammer** -
 ![Hammer](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.hammer.png)
-
 Pulverizes ores into dust. Smelting the resulting dusts will increase the ore yeild by 1.5x on average.
-
-##### Drill
-
+- **Drill** -
 ![Drill](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.drill.png)
-
 Extracts chunks from ores. Will also produce some dusts. Smelting the resulting chunks and dusts will increase the ore
 yield by 2.0x on average.
-
-##### Saw
-
+- **Saw** -
 ![Saw](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.saw.png)
-
 Cuts wood logs into planks. Increases yield by 1.5x.
-
-##### Cast
-
+- **Cast** -
 ![Cast](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.cast.png)
-
 Smelts ore, chunks, and dust into ingots.
-
-##### Sifter
-
+- **Sifter** -
 ![Sifter](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.sifter.png)
-
 Removes impurities from the dusts. Increases yield from hammer by an additional 0.25x, and the drill by an additional
 0.2x.
-
-##### Oven
-
+- **Oven** -
 Creates cobble, stone, obsidian, brick, and much more. Requires at least one liquid tank, but two are required for
 cobble, stone, and obsidian.
-
-##### Boiler
-
+- **Boiler** -
+![Hammer](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.boiler.png)
 Produces steam. Requires a liquid tank and a compression cylinder.
 
 #### Engines
@@ -128,39 +113,25 @@ Produces steam. Requires a liquid tank and a compression cylinder.
 These components produce energy. Multiple of the same component will increase efficiency, but multiple different
 engines will reduce efficiency.
 
-##### Hydro
-
+- **Hydro** -
 Uses current in adjacent blocks to produce power. Only the block adjacent to the face this component is on is used
 though.
-
-##### Solar
-
-![Solar](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.solar.png)
-
+- **Solar** -
+![Solar](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineEngine.solar.png)
 Collects sunlight to produce power. Does not work on the bottom face. The top is best, but the sides will operate at
 half efficiency.
-
-##### Thermal
-
-![Thermal](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.thermal.png)
-
+- **Thermal** -
+![Thermal](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineEngine.thermal.png)
 Uses heat produced by adjacent lava blocks to generate power. Must be facing the lava block to work. Also requires a
 liquid tank with water.
-
-##### Wind
-
+- **Wind** -
 Harnesses the power of the wind. Only works on the front/back/left/right faces. Up to two of these can be combined in
 a machine, but must be on opposite faces. Only effective if the block is placed so these face east/west. (Clouds move
 towards west.)
-
-##### Solid/Liquid Fueled
-
+- **Solid/Liquid Fueled** -
 Burn solid or liquid fuels to generate power. Require a liquid tank or a hopper.
-
-##### Steam
-
-![Steam](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.steam.png)
-
+- **Steam** -
+![Steam](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineEngine.steam.png)
 Uses steam to produce energy. Requires a compression cylinder. There is also an industrial version, which is more
 efficient.
 
