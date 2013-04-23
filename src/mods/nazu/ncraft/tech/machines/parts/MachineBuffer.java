@@ -12,8 +12,9 @@ public class MachineBuffer extends EnumMultiItem
 {
     public MachineBuffer(int id)
     {
-        super(id, TechItems.MachineBuffer.getName(), MachineBuffers.values());
+        super(id, MachineBuffers.values());
 
         setCreativeTab(TabTech.INSTANCE);
+        setUnlocalizedName(TechItems.MachineBuffer.getName());
     }
 }

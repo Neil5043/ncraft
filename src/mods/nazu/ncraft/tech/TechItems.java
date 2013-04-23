@@ -1,12 +1,12 @@
 package mods.nazu.ncraft.tech;
 
+import mods.nazu.ncraft.api.tech.machines.part.MachineComponentMultiItem;
+import mods.nazu.ncraft.tech.machines.parts.MachineBuffers;
+import mods.nazu.ncraft.tech.machines.parts.MachineEngines;
+import mods.nazu.ncraft.tech.machines.parts.MachineIOs;
+import mods.nazu.ncraft.tech.machines.parts.MachineParts;
+import mods.nazu.ncraft.tech.machines.parts.MachineTools;
 import net.minecraft.item.Item;
-
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-
-import mods.nazu.ncraft.tech.machines.parts.MachineBuffer;
-import mods.nazu.ncraft.tech.machines.parts.MachineIO;
 
 /**
  * @author nazuraki
@@ -14,23 +14,66 @@ import mods.nazu.ncraft.tech.machines.parts.MachineIO;
  */
 public enum TechItems
 {
-    MachinePart("machinePart", 540, mods.nazu.ncraft.tech.machines.parts.MachinePart.class, "Machine Part"),
-    MachineTool("machineTool", 541, mods.nazu.ncraft.tech.machines.parts.MachineTool.class, "Machine Tool"),
-    MachineEngine("machineEngine", 542, mods.nazu.ncraft.tech.machines.parts.MachineEngine.class, "Machine Engine"),
-    MachineBuffer("machineBuffers", 543, MachineBuffer.class, "Machine Buffer"),
-    MachineIO("machineIO", 544, MachineIO.class, "Machine I/O"),
+    MachinePart("machinePart", 540, "Machine Part")
+            {
+                @Override
+                public Item create(int id)
+                {
+                    return new MachineComponentMultiItem(id, MachineParts.values())
+                            .setCreativeTab(TabTech.INSTANCE)
+                            .setUnlocalizedName(getName());
+                }
+            },
+    MachineTool("machineTool", 541, "Machine Tool")
+            {
+                @Override
+                public Item create(int id)
+                {
+                    return new MachineComponentMultiItem(id, MachineTools.values())
+                            .setCreativeTab(TabTech.INSTANCE)
+                            .setUnlocalizedName(getName());
+                }
+            },
+    MachineEngine("machineEngine", 542, "Machine Engine")
+            {
+                @Override
+                public Item create(int id)
+                {
+                    return new MachineComponentMultiItem(id, MachineEngines.values())
+                            .setCreativeTab(TabTech.INSTANCE)
+                            .setUnlocalizedName(getName());
+                }
+            },
+    MachineBuffer("machineBuffers", 543, "Machine Buffer")
+            {
+                @Override
+                public Item create(int id)
+                {
+                    return new MachineComponentMultiItem(id, MachineBuffers.values())
+                            .setCreativeTab(TabTech.INSTANCE)
+                            .setUnlocalizedName(getName());
+                }
+            },
+    MachineIO("machineIO", 544, "Machine I/O")
+            {
+                @Override
+                public Item create(int id)
+                {
+                    return new MachineComponentMultiItem(id, MachineIOs.values())
+                            .setCreativeTab(TabTech.INSTANCE)
+                            .setUnlocalizedName(getName());
+                }
+            },
     ;
 
     private final String name;
     private final int defaultId;
-    private final Class<? extends Item> klass;
     private final String displayName;
 
-    private TechItems(String name, int defaultId, Class<? extends Item> klass, String displayName)
+    private TechItems(String name, int defaultId, String displayName)
     {
         this.name = name;
         this.defaultId = defaultId;
-        this.klass = klass;
         this.displayName = displayName;
     }
 
@@ -38,29 +81,5 @@ public enum TechItems
     public String getDisplayName() { return displayName; }
     public int getDefaultId() { return defaultId; }
 
-    public Item create(int id)
-    {
-        try
-        {
-            Constructor ctor = klass.getConstructor(int.class);
-            return (Item) ctor.newInstance(id);
-        }
-        catch (NoSuchMethodException e)
-        {
-            e.printStackTrace();
-        }
-        catch (InvocationTargetException e)
-        {
-            e.printStackTrace();
-        }
-        catch (InstantiationException e)
-        {
-            e.printStackTrace();
-        }
-        catch (IllegalAccessException e)
-        {
-            e.printStackTrace();
-        }
-        return null;
-    }
+    public abstract Item create(int id);
 }

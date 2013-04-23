@@ -18,16 +18,15 @@ import net.minecraft.util.Icon;
  */
 public class EnumMultiItem extends Item
 {
-    protected final Icon[] icons;
-    protected final Type[] types;
+    private final Icon[] icons;
+    private final Type[] types;
 
-    protected EnumMultiItem(int id, String name, Type[] types)
+    public EnumMultiItem(int id, Type[] types)
     {
         super(id);
 
         setMaxDamage(0);
         setHasSubtypes(true);
-        setUnlocalizedName(name);
 
         this.types = types;
         icons = new Icon[types.length];

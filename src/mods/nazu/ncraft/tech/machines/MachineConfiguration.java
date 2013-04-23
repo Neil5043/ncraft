@@ -24,5 +24,5 @@ package mods.nazu.ncraft.tech.machines;
  */
 public class MachineConfiguration
 {
-
+    
 }
