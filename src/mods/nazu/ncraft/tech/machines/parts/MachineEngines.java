@@ -3,6 +3,7 @@ package mods.nazu.ncraft.tech.machines.parts;
 import java.util.EnumSet;
 import java.util.Set;
 
+import mods.nazu.ncraft.api.tech.machines.MachineComponent;
 import mods.nazu.ncraft.tech.machines.MachineFace;
 
 import static mods.nazu.ncraft.tech.machines.MachineFace.*;

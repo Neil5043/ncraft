@@ -84,24 +84,32 @@ controller component for them to interact.
 
 ##### Hammer
 
-todo: screenshot
+![Hammer](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.hammer.png)
 
 Pulverizes ores into dust. Smelting the resulting dusts will increase the ore yeild by 1.5x on average.
 
 ##### Drill
+
+![Drill](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.drill.png)
 
 Extracts chunks from ores. Will also produce some dusts. Smelting the resulting chunks and dusts will increase the ore
 yield by 2.0x on average.
 
 ##### Saw
 
+![Saw](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.saw.png)
+
 Cuts wood logs into planks. Increases yield by 1.5x.
 
 ##### Cast
 
+![Cast](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.cast.png)
+
 Smelts ore, chunks, and dust into ingots.
 
 ##### Sifter
+
+![Sifter](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.sifter.png)
 
 Removes impurities from the dusts. Increases yield from hammer by an additional 0.25x, and the drill by an additional
 0.2x.
@@ -127,10 +135,14 @@ though.
 
 ##### Solar
 
+![Solar](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.solar.png)
+
 Collects sunlight to produce power. Does not work on the bottom face. The top is best, but the sides will operate at
 half efficiency.
 
 ##### Thermal
+
+![Thermal](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.thermal.png)
 
 Uses heat produced by adjacent lava blocks to generate power. Must be facing the lava block to work. Also requires a
 liquid tank with water.
@@ -146,6 +158,8 @@ towards west.)
 Burn solid or liquid fuels to generate power. Require a liquid tank or a hopper.
 
 ##### Steam
+
+![Steam](https://raw.github.com/kurakin/ncraft/master/res/mods/ncraft/textures/items/machineTool.steam.png)
 
 Uses steam to produce energy. Requires a compression cylinder. There is also an industrial version, which is more
 efficient.

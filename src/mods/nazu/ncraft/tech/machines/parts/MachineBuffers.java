@@ -2,6 +2,7 @@ package mods.nazu.ncraft.tech.machines.parts;
 
 import java.util.Set;
 
+import mods.nazu.ncraft.api.tech.machines.MachineComponent;
 import mods.nazu.ncraft.tech.machines.MachineFace;
 
 /**

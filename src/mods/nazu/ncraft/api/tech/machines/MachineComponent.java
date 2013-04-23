@@ -1,4 +1,4 @@
-package mods.nazu.ncraft.tech.machines.parts;
+package mods.nazu.ncraft.api.tech.machines;
 
 import java.util.Set;
 
@@ -15,11 +15,6 @@ public interface MachineComponent
      * @return the unlocalized name of this component
      */
     public String getName();
-
-    /**
-     * @return the localized display name of this component
-     */
-    public String getDisplayName();
 
     /**
      * Returns whether or not this component accepts a connection. A component that accepts a connection must be placed
