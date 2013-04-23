@@ -12,7 +12,7 @@ import mods.nazu.ncraft.tech.machines.parts.MachineIO;
  * @author nazuraki
  * @since 2013.04.19
  */
-public enum Items
+public enum TechItems
 {
     MachinePart("machinePart", 540, mods.nazu.ncraft.tech.machines.parts.MachinePart.class, "Machine Part"),
     MachineTool("machineTool", 541, mods.nazu.ncraft.tech.machines.parts.MachineTool.class, "Machine Tool"),
@@ -26,7 +26,7 @@ public enum Items
     private final Class<? extends Item> klass;
     private final String displayName;
 
-    private Items(String name, int defaultId, Class<? extends Item> klass, String displayName)
+    private TechItems(String name, int defaultId, Class<? extends Item> klass, String displayName)
     {
         this.name = name;
         this.defaultId = defaultId;

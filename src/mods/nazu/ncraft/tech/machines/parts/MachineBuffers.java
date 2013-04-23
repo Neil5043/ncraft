@@ -2,6 +2,7 @@ package mods.nazu.ncraft.tech.machines.parts;
 
 import java.util.Set;
 
+import mods.nazu.ncraft.api.item.EnumMultiItem;
 import mods.nazu.ncraft.api.tech.machines.MachineComponent;
 import mods.nazu.ncraft.tech.machines.MachineFace;
 
@@ -10,7 +11,7 @@ import mods.nazu.ncraft.tech.machines.MachineFace;
  * @license CC BY 3.0
  * @since 2013.04.22
  */
-public enum MachineBuffers implements MachineComponent
+public enum MachineBuffers implements MachineComponent, EnumMultiItem.Type
 {
     Capacitor("capacitor", "Capacitor"),
     LiquidTank("liquidTank", "Liquid Tank"),
@@ -27,6 +28,7 @@ public enum MachineBuffers implements MachineComponent
         this.displayName = displayName;
     }
 
+    @Override public int getId() { return ordinal(); }
     @Override public String getName() { return name; }
     @Override public String getDisplayName() { return displayName; }
 

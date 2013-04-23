@@ -38,6 +38,7 @@ public class NCraftCore
 
         Config.registerNames();
         Config.registerBlocks();
+        Config.registerMachineComponents();
 
         proxy.addNames();
 

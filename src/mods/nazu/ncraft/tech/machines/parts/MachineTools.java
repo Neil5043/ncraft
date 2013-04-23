@@ -2,6 +2,7 @@ package mods.nazu.ncraft.tech.machines.parts;
 
 import java.util.Set;
 
+import mods.nazu.ncraft.api.item.EnumMultiItem;
 import mods.nazu.ncraft.api.tech.machines.MachineComponent;
 import mods.nazu.ncraft.tech.machines.MachineFace;
 
@@ -9,7 +10,7 @@ import mods.nazu.ncraft.tech.machines.MachineFace;
  * @author nazuraki
  * @since 2013.04.21
  */
-public enum MachineTools implements MachineComponent
+public enum MachineTools implements MachineComponent, EnumMultiItem.Type
 {
     Hammer("hammer", "Hammer"), // pulverize into dust
     Drill("drill", "Drill"), // extract chunks
@@ -30,20 +31,11 @@ public enum MachineTools implements MachineComponent
         this.displayName = displayName;
     }
 
+    @Override public int getId() { return ordinal(); }
     @Override public String getName() { return name; }
     @Override public String getDisplayName() { return displayName; }
-
-    @Override
-    public boolean acceptsConnection()
-    {
-        return false;
-    }
-
-    @Override
-    public Set<MachineFace> requiresFace()
-    {
-        return null;
-    }
+    @Override public boolean acceptsConnection() { return false; }
+    @Override public Set<MachineFace> requiresFace() { return null; }
 
     private static final MachineTools[] byId;
     static

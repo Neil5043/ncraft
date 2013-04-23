@@ -1,9 +1,17 @@
 package mods.nazu.ncraft.config;
 
+import java.io.File;
+import java.util.EnumMap;
+import java.util.Map;
+
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import mods.nazu.ncraft.api.item.EnumMultiItem;
+import mods.nazu.ncraft.api.tech.machines.MachineComponent;
+import mods.nazu.ncraft.api.tech.machines.MachineRegistry;
 import mods.nazu.ncraft.tech.Blocks;
+import mods.nazu.ncraft.tech.TechItems;
 import mods.nazu.ncraft.world.Items;
 import mods.nazu.ncraft.world.Ores;
 import net.minecraft.block.Block;
@@ -11,10 +19,6 @@ import net.minecraft.item.Item;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
-
-import java.io.File;
-import java.util.EnumMap;
-import java.util.Map;
 
 /**
  * @author nazuraki
@@ -31,7 +35,7 @@ public class Config
 
     // tech
     private static final Map<Blocks, Block> BLOCKS = new EnumMap<Blocks, Block>(Blocks.class);
-    private static final Map<mods.nazu.ncraft.tech.Items, Item> TECH_ITEMS = new EnumMap<mods.nazu.ncraft.tech.Items, Item>(mods.nazu.ncraft.tech.Items.class);
+    private static final Map<TechItems, Item> TECH_ITEMS = new EnumMap<TechItems, Item>(TechItems.class);
 
     public Config(FMLPreInitializationEvent event)
     {
@@ -56,18 +60,6 @@ public class Config
         return (null == i ? -1 : i.itemID);
     }
 
-    public static int getId(Blocks block)
-    {
-        Block b = BLOCKS.get(block);
-        return (null == b ? -1 : b.blockID);
-    }
-
-    public static int getId(mods.nazu.ncraft.tech.Items item)
-    {
-        Item i = TECH_ITEMS.get(item);
-        return (null == i ? -1 : i.itemID);
-    }
-
     public static int getId(Ores block)
     {
         Block b = ORES.get(block);
@@ -84,7 +76,7 @@ public class Config
             }
         }
 
-        for (Map.Entry<mods.nazu.ncraft.tech.Items, Item> entry : TECH_ITEMS.entrySet())
+        for (Map.Entry<TechItems, Item> entry : TECH_ITEMS.entrySet())
         {
             if (null != entry.getValue())
             {
@@ -137,6 +129,18 @@ public class Config
         }
     }
 
+    public static void registerMachineComponents()
+    {
+        for (Item item : TECH_ITEMS.values())
+        {
+            EnumMultiItem multiItem = (EnumMultiItem) item;
+            for (EnumMultiItem.Type type : multiItem.getTypes())
+            {
+                MachineRegistry.registerComponent(item.itemID, type.getId(), (MachineComponent) type);
+            }
+        }
+    }
+
     private static void createItems(Configuration cfg)
     {
         for (Items item : Items.values())
@@ -149,7 +153,7 @@ public class Config
             );
         }
 
-        for (mods.nazu.ncraft.tech.Items item : mods.nazu.ncraft.tech.Items.values())
+        for (TechItems item : TechItems.values())
         {
             TECH_ITEMS.put(
                 item,

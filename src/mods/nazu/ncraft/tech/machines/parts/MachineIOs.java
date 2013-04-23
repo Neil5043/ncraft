@@ -3,6 +3,7 @@ package mods.nazu.ncraft.tech.machines.parts;
 import java.util.EnumSet;
 import java.util.Set;
 
+import mods.nazu.ncraft.api.item.EnumMultiItem;
 import mods.nazu.ncraft.api.tech.machines.MachineComponent;
 import mods.nazu.ncraft.tech.machines.MachineFace;
 
@@ -11,7 +12,7 @@ import mods.nazu.ncraft.tech.machines.MachineFace;
  * @license CC BY 3.0
  * @since 2013.04.22
  */
-public enum MachineIOs implements MachineComponent
+public enum MachineIOs implements MachineComponent, EnumMultiItem.Type
 {
     PowerIntake("powerIntake", "Power Intake"),
     PowerOutlet("powerOutlet", "Power Outlet"),
@@ -32,20 +33,11 @@ public enum MachineIOs implements MachineComponent
         this.displayName = displayName;
     }
 
+    @Override public int getId() { return ordinal(); }
     @Override public String getName() { return name; }
     @Override public String getDisplayName() { return displayName; }
-
-    @Override
-    public boolean acceptsConnection()
-    {
-        return true;
-    }
-
-    @Override
-    public Set<MachineFace> requiresFace()
-    {
-        return EnumSet.allOf(MachineFace.class);
-    }
+    @Override public boolean acceptsConnection() { return true; }
+    @Override public Set<MachineFace> requiresFace() { return EnumSet.allOf(MachineFace.class); }
 
     private static final MachineIOs[] byId;
     static

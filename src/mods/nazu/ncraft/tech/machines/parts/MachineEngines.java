@@ -3,6 +3,7 @@ package mods.nazu.ncraft.tech.machines.parts;
 import java.util.EnumSet;
 import java.util.Set;
 
+import mods.nazu.ncraft.api.item.EnumMultiItem;
 import mods.nazu.ncraft.api.tech.machines.MachineComponent;
 import mods.nazu.ncraft.tech.machines.MachineFace;
 
@@ -12,7 +13,7 @@ import static mods.nazu.ncraft.tech.machines.MachineFace.*;
  * @author nazuraki
  * @since 2013.04.21
  */
-public enum MachineEngines implements MachineComponent
+public enum MachineEngines implements MachineComponent, EnumMultiItem.Type
 {
     Hydro                   ("hydro",               "Hydro Engine",             true, EnumSet.allOf(MachineFace.class)),
     Solar                   ("solar",               "Solar Engine",             true, EnumSet.of(Top, Left, Right, Front, Back)),
@@ -37,6 +38,7 @@ public enum MachineEngines implements MachineComponent
         this.requiredFaces = requiredFaces;
     }
 
+    @Override public int getId() { return ordinal(); }
     @Override public String getName() { return name; }
     @Override public String getDisplayName() { return displayName; }
     @Override public boolean acceptsConnection() { return acceptsConnection; }
